@@ -5,6 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 class Scene extends StatelessWidget {
+  TextEditingController _ctrlEmail = TextEditingController();
+  TextEditingController _ctrlPassword = TextEditingController();
+  final _formke = GlobalKey();
+  Future doLogin() async {}
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -15,7 +19,7 @@ class Scene extends StatelessWidget {
       child: Container(
         // loginnzY (31:579)
         width: double.infinity,
-        decoration: BoxDecoration (
+        decoration: BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Column(
@@ -24,18 +28,18 @@ class Scene extends StatelessWidget {
             Container(
               // autogroup6qguPcx (6wZyiJFNz1NnEAuXoq6QGU)
               width: double.infinity,
-              height: 66*fem,
-              decoration: BoxDecoration (
+              height: 90 * fem,
+              decoration: BoxDecoration(
                 color: Color(0xff4b39ef),
               ),
               child: Center(
                 child: Text(
-                  'DSME2',
-                  style: SafeGoogleFont (
+                  'Login',
+                  style: SafeGoogleFont(
                     'Inter',
-                    fontSize: 32*ffem,
+                    fontSize: 32 * ffem,
                     fontWeight: FontWeight.w700,
-                    height: 1.2125*ffem/fem,
+                    height: 2.2125 * ffem / fem,
                     color: Color(0xffffffff),
                   ),
                 ),
@@ -43,47 +47,28 @@ class Scene extends StatelessWidget {
             ),
             Container(
               // autogrouptbiu7hN (6wZziGanVPZuBWpcLXtBiU)
-              padding: EdgeInsets.fromLTRB(10*fem, 23*fem, 10*fem, 28*fem),
+              padding:
+                  EdgeInsets.fromLTRB(10 * fem, 23 * fem, 10 * fem, 28 * fem),
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     // autogroupbun8Pet (6wZyunvE9LGz79MZCvBUn8)
-                    margin: EdgeInsets.fromLTRB(58*fem, 0*fem, 90*fem, 114*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        58 * fem, 0 * fem, 90 * fem, 50 * fem),
                     width: double.infinity,
-                    height: 160*fem,
+                    height: 155 * fem,
                     child: Stack(
                       children: [
                         Positioned(
-                          // textT8x (31:587)
-                          left: 0*fem,
-                          top: 102*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 43*fem,
-                              height: 20*fem,
-                              child: Text(
-                                'TEXT',
-                                style: SafeGoogleFont (
-                                  'Inter',
-                                  fontSize: 16*ffem,
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.2125*ffem/fem,
-                                  color: Color(0xffffffff),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
                           // rectangle136r8 (31:599)
-                          left: 33*fem,
-                          top: 0*fem,
+                          left: 33 * fem,
+                          top: 0 * fem,
                           child: Align(
                             child: SizedBox(
-                              width: 159*fem,
-                              height: 160*fem,
+                              width: 159 * fem,
+                              height: 150 * fem,
                               child: Image.asset(
                                 'assets/page-1/images/rectangle-13.png',
                                 fit: BoxFit.cover,
@@ -96,74 +81,84 @@ class Scene extends StatelessWidget {
                   ),
                   Container(
                     // autogroupoo3iZzc (6wZz3nguPPLX4n6sq9oo3i)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 48*fem),
-                    padding: EdgeInsets.fromLTRB(8*fem, 10*fem, 8*fem, 20*fem),
-                    width: double.infinity,
-                    decoration: BoxDecoration (
-                      border: Border.all(color: Color(0x9e000000)),
-                      color: Color(0xffffffff),
-                    ),
-                    child: Text(
-                      'TEXT',
-                      style: SafeGoogleFont (
-                        'Inter',
-                        fontSize: 16*ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.2125*ffem/fem,
-                        color: Color(0xff000000),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: TextFormField(
+                        controller: _ctrlEmail,
+                        decoration: InputDecoration(
+                            fillColor: Colors.white70,
+                            filled: true,
+                            label: Text(
+                              "E-mail",
+                              style: SafeGoogleFont(
+                                'Inter',
+                                fontSize: 16 * ffem,
+                                fontWeight: FontWeight.w700,
+                                height: 1.2125 * ffem / fem,
+                                color: Color(0xff000000),
+                              ),
+                            ),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0))),
                       ),
                     ),
                   ),
                   Container(
-                    // autogroupp6ycPik (6wZzD2vVtKdHvc2bJYp6Yc)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 14*fem),
-                    padding: EdgeInsets.fromLTRB(8*fem, 15*fem, 8*fem, 15*fem),
-                    width: double.infinity,
-                    decoration: BoxDecoration (
-                      border: Border.all(color: Color(0x9e000000)),
-                      color: Color(0xffffffff),
-                    ),
-                    child: Text(
-                      'TEXT',
-                      style: SafeGoogleFont (
-                        'Inter',
-                        fontSize: 16*ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.2125*ffem/fem,
-                        color: Color(0xff000000),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: TextFormField(
+                        obscureText: true,
+                        controller: _ctrlPassword,
+                        decoration: InputDecoration(
+                            fillColor: Colors.white70,
+                            filled: true,
+                            label: Text(
+                              "Password",
+                              style: SafeGoogleFont(
+                                'Inter',
+                                fontSize: 16 * ffem,
+                                fontWeight: FontWeight.w700,
+                                height: 1.2125 * ffem / fem,
+                                color: Color(0xff000000),
+                              ),
+                            ),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0))),
                       ),
                     ),
                   ),
                   Container(
                     // textcbW (31:601)
-                    margin: EdgeInsets.fromLTRB(1*fem, 0*fem, 0*fem, 14*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 10 * fem, 0 * fem, 20 * fem),
                     child: Text(
-                      'Text',
-                      style: SafeGoogleFont (
+                      'Foget password',
+                      style: SafeGoogleFont(
                         'Inter',
-                        fontSize: 16*ffem,
+                        fontSize: 16 * ffem,
                         fontWeight: FontWeight.w700,
-                        height: 1.2125*ffem/fem,
+                        height: 1.2125 * ffem / fem,
                         color: Color(0xc62c0afa),
                       ),
                     ),
                   ),
                   Container(
                     // autogroupvayu6ma (6wZzRMuHtEgKjhvsw5VAYU)
-                    margin: EdgeInsets.fromLTRB(74*fem, 0*fem, 66*fem, 155*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        74 * fem, 0 * fem, 66 * fem, 100 * fem),
                     width: double.infinity,
-                    height: 38*fem,
-                    decoration: BoxDecoration (
+                    height: 38 * fem,
+                    decoration: BoxDecoration(
                       color: Color(0x82ff1111),
                     ),
                     child: Center(
                       child: Text(
-                        'Text',
-                        style: SafeGoogleFont (
+                        'Login',
+                        style: SafeGoogleFont(
                           'Inter',
-                          fontSize: 16*ffem,
+                          fontSize: 16 * ffem,
                           fontWeight: FontWeight.w700,
-                          height: 1.2125*ffem/fem,
+                          height: 1.2125 * ffem / fem,
                           color: Color(0xff000000),
                         ),
                       ),
@@ -171,14 +166,15 @@ class Scene extends StatelessWidget {
                   ),
                   Container(
                     // textwnC (31:603)
-                    margin: EdgeInsets.fromLTRB(1*fem, 0*fem, 0*fem, 0*fem),
+                    margin:
+                        EdgeInsets.fromLTRB(1 * fem, 0 * fem, 0 * fem, 0 * fem),
                     child: Text(
-                      'Text',
-                      style: SafeGoogleFont (
+                      'Singh up',
+                      style: SafeGoogleFont(
                         'Inter',
-                        fontSize: 16*ffem,
+                        fontSize: 16 * ffem,
                         fontWeight: FontWeight.w700,
-                        height: 1.2125*ffem/fem,
+                        height: 1.2125 * ffem / fem,
                         color: Color(0xff000000),
                       ),
                     ),
@@ -189,6 +185,6 @@ class Scene extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }
